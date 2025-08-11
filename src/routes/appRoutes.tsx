@@ -1,4 +1,3 @@
-// src/routes/AppRoutes.tsx
 import { Routes, Route } from "react-router-dom";
 import { Login } from "../pages/Login/index.tsx";
 import { Painel } from '../pages/Painel.tsx';

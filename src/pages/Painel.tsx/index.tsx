@@ -13,24 +13,29 @@ import { ImFire } from "react-icons/im"
 import { Footer } from "../../components/Footer"
 
 export function Painel() {
-  const dadosSemana = [
-    { nome: 'Seg', valor: 2 },
-    { nome: 'Ter', valor: 1 },
-    { nome: 'Qua', valor: 3 },
-    { nome: 'Qui', valor: 2 },
-    { nome: 'Sex', valor: 4 },
-    { nome: 'Sáb', valor: 6 },
-    { nome: 'Dom', valor: 1 },
-  ]
+ 
+    const dados = [
+  { nome: 'Segunda', valor: 2, semana: 'Semana 1' },
+  { nome: 'Terça', valor: 1.5, semana: 'Semana 1' },
+  { nome: 'Quarta', valor: 3, semana: 'Semana 1' },
+  { nome: 'Quinta', valor: 3, semana: 'Semana 1' },
+  { nome: 'Sexta', valor: 3, semana: 'Semana 1' },
+  { nome: 'Segunda-feira', valor: 1, semana: 'Semana 2' },
+  { nome: 'Terça-feira', valor: 2.5, semana: 'Semana 2' },
+  { nome: 'Quarta-feira', valor: 2.5, semana: 'Semana 2' },
+  { nome: 'Quinta-feira', valor: 2.5, semana: 'Semana 2' },
+   { nome: 'Sexta-feira', valor: 2.5, semana: 'Semana 2' },
+]
+
 
   return (
-    <div className="bg-gray-50 min-h-screen px-4 lg:px-20 md:px-8 xl:px-6 2xl:px-14 py-6 font-sans">
-      <div className="w-full mx-auto flex flex-col gap-8">
+    <div className=" dark:bg-gray-900 bg-gray-50 min-h-screen px-4 lg:px-20 md:px-8 xl:px-6 2xl:px-14 py-6 font-sans">
+      <div className="w-full max-w-7xl mx-auto flex flex-col gap-8">
 
-        {/* Header com botão de tema */}
+        
         <Header nome="Janiele" />
 
-        {/* Cards de resumo */}
+       
         <div className="flex flex-wrap gap-4">
           <CardResumo
             titulo="Trilhas Criadas"
@@ -69,20 +74,21 @@ export function Painel() {
           />
         </div>
 
-        {/* Gráfico + Tarefas lado a lado */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Grafico titulo="Progresso Semanal" data={dadosSemana} />
+            <Grafico titulo="Progresso Semanal" data={dados} />
+
           <Tarefas />
         </div>
 
-        {/* Gerador de plano com IA */}
+       
         
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <GerarPlanoIA />
           <ObjetivoSemana />
         </div>
 
-        {/* Trilhas recentes */}
+       
         <Trilhas />
       </div>
        <Footer />
